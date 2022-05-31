@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -28,21 +29,24 @@ public class Instrutor {
 	private Integer idInstrutor;
 
 	@Column(name = "rg")
-	@NotBlank(message = "RG não informado")
+	@NotNull(message = "Este campo está vazio")
 	private Integer rg;
 
 	@Column(name = "nome")
 	@NotBlank(message = "Nome não informado")
 	@Pattern(regexp = "^[A-Z]+(.)*", message = "O nome não pode começar com letras minúsculas.")
+	@NotNull(message = "Este campo está vazio")
 	private String nomeInstrutor;
 
 	@Column(name = "nascimento")
 	@NotBlank(message = "Data não informada")
+	@NotNull(message = "Este campo está vazio")
 	private Date dataNascimento;
 
 	@Column(name = "titulacao")
-	
+	@NotNull(message = "Este campo está vazio")
 	private Integer titulacaoInstrutor;
+	
 	@NotBlank(message = "Titulação não informada")
 	@OneToMany(mappedBy = "instrutor")
 	//@JsonManagedReference

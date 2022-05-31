@@ -53,7 +53,7 @@ public class InstrutorController {
 	}
 
 	@GetMapping("/dto/{id}")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Retornar um instrutor", description  = "Intrutor")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -68,7 +68,7 @@ public class InstrutorController {
 	}
 
 	@GetMapping("/{id}")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Retornar um instrutor", description  = "Instrutor")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -84,7 +84,7 @@ public class InstrutorController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Inserir os dados de instrutor", description  = "Instrutor")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -96,7 +96,7 @@ public class InstrutorController {
 	}
 
 	@PostMapping("/dto")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Inserir os dados de instrutor", description  = "Instrutor")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -108,7 +108,7 @@ public class InstrutorController {
 	}
 
 	@PutMapping
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Atualizar os dados de instrutor", description  = "Instrutor atualizado")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -123,7 +123,7 @@ public class InstrutorController {
 	}
 
 	@DeleteMapping("/{id}")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Remover um instrutor", description  = "Instrutor removido")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 

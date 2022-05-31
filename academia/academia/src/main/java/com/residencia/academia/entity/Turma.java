@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -29,18 +30,21 @@ public class Turma {
 
 	@Column(name = "horario")
 	@NotBlank(message = "Horário não informado")
+	@NotNull(message = "Este campo está vazio")
 	private Date horarioTurma;
 
 	@Column(name = "duracao")
-	@NotBlank(message = "Duração não informada")
+	@NotNull(message = "Este campo está vazio")
 	private Integer duracaoTurma;
 
 	@Column(name = "data_inicio")
 	@NotBlank(message = "Data não informada")
+	@NotNull(message = "Este campo está vazio")
 	private Date dataInicio;
 
 	@Column(name = "data_fim")
 	@NotBlank(message = "Data não informada")
+	@NotNull(message = "Este campo está vazio")
 	private Date dataFim;
 
 	@ManyToOne

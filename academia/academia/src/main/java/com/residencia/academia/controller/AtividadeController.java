@@ -32,7 +32,7 @@ public class AtividadeController {
 	private AtividadeService atividadeService;
 	
 	@GetMapping
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Listar todas as atividades", description  = "Listagem de atividades")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -46,19 +46,9 @@ public class AtividadeController {
 		    return new ResponseEntity<>(atividadeService.findAllAtividade(), HttpStatus.OK);
 
 	}
-	@PostMapping
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
-	@ApiResponses(value = { 
-			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
-			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
-			  @ApiResponse(responseCode = "403", description = "Você não tem permissão para acessar recurso"), 
-			  @ApiResponse(responseCode = "404", description = "Recurso não encontrado")})
-	public ResponseEntity<Atividade> saveAtividade(@RequestBody @Valid Atividade atividade) {
-		return new ResponseEntity<>(atividadeService.saveAtividade(atividade), HttpStatus.CREATED);
-	}
 	
 	@GetMapping("/{id}")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Retornar uma atividade", description  = "Atividade")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -71,9 +61,20 @@ public class AtividadeController {
 		else
 			return new ResponseEntity<>(atividadeService.findAtividadeById(id), HttpStatus.OK);
 	} 
+	
+	@PostMapping
+	@Operation(summary="Inserir os dados de atividade", description  = "Atividade adicionada")
+	@ApiResponses(value = { 
+			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
+			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
+			  @ApiResponse(responseCode = "403", description = "Você não tem permissão para acessar recurso"), 
+			  @ApiResponse(responseCode = "404", description = "Recurso não encontrado")})
+	public ResponseEntity<Atividade> saveAtividade(@RequestBody @Valid Atividade atividade) {
+		return new ResponseEntity<>(atividadeService.saveAtividade(atividade), HttpStatus.CREATED);
+	}
 
 	@PutMapping
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Atualizar os dados de atividade", description  = "Atividade atualizada")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 
@@ -85,7 +86,7 @@ public class AtividadeController {
 
 	
 	@DeleteMapping("/{id}")
-	@Operation(summary="Listar todos os instrutores", description  = "Listagem de instrutores")
+	@Operation(summary="Remover uma atividade", description  = "Atividade removida")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Listado com sucesso"),
 			  @ApiResponse(responseCode = "400", description = "ID Inválido"), 

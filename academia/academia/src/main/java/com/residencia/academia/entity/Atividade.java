@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -22,7 +23,7 @@ public class Atividade {
 	private Integer idAtividade;
 	
 	@Column(name = "nome")
-	
+	@NotNull(message = "Este campo está vazio")
 	@NotBlank(message = "Campo não informado")
 	@Pattern(regexp = "^[A-Z]+(.)*", message = "O nome não pode começar com letras minúsculas.")
 	private String nomeAtividade;
